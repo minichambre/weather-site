@@ -2,7 +2,8 @@ const express = require('express')
 const axios = require("axios");
 const app = express()
 const port = process.env.PORT || 81
-const {apiKey} = require('./config.json');
+//const {apiKey} = require('./config.json'); //make .env
+const apiKey = process.env.APIKEY
 var mustacheExpress = require('mustache-express');
 var path = require('path');
 const url = "https://api.weatherbit.io/v2.0/current?city=rovaniemi,fi&key=" + apiKey;
