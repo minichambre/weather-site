@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gowing Weather</title>
+    <link rel='stylesheet' type="text/css" href="stylesheets/style.css">
+    <script src="js/main.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="description" class="weatherHeadline"> {{ description }} </h1>
+      <h3 id="temp" class="weatherHeadline weatherSubHeading"> {{ temp }} degrees celcius  </h3>
+      <h4 id="location"> in {{location}}, {{country_code}} </h4>
+      <div id="searchCity">
+        <input type=text id="cityInput" placeholder="enter a city"> </input>
+        <img id="searchButton" src="http://www.stickpng.com/assets/images/585e4ad1cb11b227491c3391.png" onclick="submitCity()"></img>
+      </div>
+    </div>
+  </body>
+</html>

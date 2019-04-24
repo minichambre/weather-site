@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Mali');
+@import url("https://fonts.googleapis.com/css?family=Mali");
 h3 {
   color: #f00;
   font-size: 30px;
 }
 body {
-  padding: 5%;
-  background-color: lightblue;
+  background-color: #c8d3d8;
+  font-family: "Mali", cursive;
+  padding: 0.05%;
+}
+
+#container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  font-family: "Mali", cursive;
+  box-shadow: 0px 0px 5px #71abbd;
+  background-color: #dbe3e6;
 }
 
 .weatherHeadline {
-  color: #fff;
-  font-size: 16vh;
+  color: #a1a4a5;
+  font-size: 12vh;
   width: 100%;
   text-align: center;
   height: 15vh;
@@ -26,39 +31,38 @@ body {
   opacity: 0.8;
 }
 
-.big {
-  font-size:100px;
+.weatherSubHeading {
+  font-weight: 500;
+  font-size: 6vh;
 }
 
-#searchCity{
-  width: 60%;
-      height: 10vh;
-      margin: auto;
-      display: block;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-}
-
-#cityInput{
-  width: 60%;
+#searchCity {
+  height: 5vh;
+  width: 36%;
   /* height: 10vh; */
-  /* margin: auto; */
+  margin: auto;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+#cityInput {
+  width: 57%;
   display: inline-block;
   text-align: center;
-  font-size: 5vh;
+  font-size: 100%;
   box-shadow: 5px 5px 10px #7fb1c1;
   padding: 1%;
+  border:none;
+  border-radius: 15px;
 }
 
 #searchButton {
-  height: 87%;
-      width: 8%;
-      background-color: rgba(0,0,0,0);
-      border: none;
-      background-image: url("http://www.stickpng.com/assets/images/585e4ad1cb11b227491c3391.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      transform: rotateZ(90deg);
-
+  height: 58%;
+  /* width: 6%; */
+  position: relative;
+  z-index: 1;
+  margin-left: -5%;
 }
