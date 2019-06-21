@@ -2,24 +2,34 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gowing Weather</title>
     <link rel='stylesheet' type="text/css" href="stylesheets/style.css">
     <script src="js/main.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="heading">
-    <img src="./fdf.png"></img>
-    <span id="title"> Gowing Weather </span>
-    <a id="faq" href="#">FAQ</a>
-    </div>
     <div id="container">
-      <h1 id="description" class="weatherHeadline"> {{ description }} </h1>
-      <h3 id="temp" class="weatherHeadline weatherSubHeading"> {{ temp }} degrees celcius  </h3>
-      <h4 id="location"> in {{location}}, {{country_code}} </h4>
-      <div id="searchCity">
-        <input type=text id="cityInput" placeholder="enter a city"> </input>
-        <img id="searchButton" src="http://www.stickpng.com/assets/images/585e4ad1cb11b227491c3391.png" onclick="submitCity()"></img>
+      <div class="center">
+        <h1 class=" temp center text"> 21 </h1><span class="degrees text">°C</span>
+        <p class=" center description text"> description </p>
       </div>
+      <div class="center">
+        <p class=" center smaller text">in</p>
+        <p id="location" class=" center medium text">Colchester</p>
+      </div>
+      <div class="center break"></div>
+      <div class="center">
+        <input value="Colchester, England"
+               type="text"
+               class="center inputCity">
+             </input>
+        <a href="#" onclick="lookupCity()" class="searchButton">
+          <img src="/images/search.png" class="searchIcon">
+        </a>
+        <p class="center smaller text error">
+        </p>
+      </div>
+      <div class="center break"></div>
     </div>
   </body>
 </html>

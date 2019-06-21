@@ -4,18 +4,14 @@ const axios = require("axios");
 const app = express();
 const port = process.env.PORT || 8080;
 const apiKey = process.env.APIKEY;
-var mustacheExpress = require("mustache-express");
-var path = require("path");
-
+const path = require("path");
 const https = require("https");
 
-app.engine("html", mustacheExpress());
-// app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static("public"));
-app.set("view engine", "html");
-app.set("views", __dirname + "/views");
 app.get("/", function(req, res) {
-  getWeather(res, "rovaniemi,fi");
+  res.sendFile(path.join(__dirname+"/views/main.html"));
+
+  //getWeather(res, "rovaniemi,fi");
 });
 
 app.get("/api/get", function(req, res) {
@@ -26,29 +22,6 @@ app.get("/api/get", function(req, res) {
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
-function getWeather(response, city) {
-  const url =
-    "https://api.weatherbit.io/v2.0/current?city="+ city + "&key=" + apiKey;
-
-  https.get(url, res => {
-    res.setEncoding("utf8");
-    let body = "";
-    res.on("data", data => {
-      console.log(data);
-      body += data;
-    });
-    res.on("end", () => {
-      var weather = JSON.parse(body)["data"][0];
-      response.render("main.html", {
-        description: weather["weather"]["description"],
-        temp: weather["temp"],
-        location: weather["city_name"],
-        country_code: weather["country_code"]
-      });
-    });
-  });
-}
-
 function getWeatherAjax(response, city) {
   const url =
     "https://api.weatherbit.io/v2.0/current?city="+ city + "&key=" + apiKey;
@@ -57,7 +30,6 @@ function getWeatherAjax(response, city) {
     res.setEncoding("utf8");
     let body = "";
     res.on("data", data => {
-      console.log(data);
       body += data;
     });
     res.on("end", () => {
