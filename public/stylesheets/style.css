@@ -1,7 +1,6 @@
 body {
   background: rgb(208,255,255);
   background: linear-gradient(145deg, rgba(208,255,255,1) 0%, rgba(123,240,249,1) 48%, rgba(54,255,253,1) 100%);
-  height: 97.7vh;
   font-family: 'Jura', sans-serif;
 }
 #container{
@@ -14,6 +13,12 @@ body {
 
 }
 
+.icon {
+  display: block;
+  max-width: 150px;
+  max-height: 150px;
+}
+
 .center{
   margin:auto;
   display:block;
@@ -23,6 +28,7 @@ body {
 .text {
   text-shadow: 0px 0px 12px #dedede;
   color:white;
+  overflow-wrap:break-word;
 }
 
 .temp{
@@ -52,6 +58,10 @@ body {
 
 .smaller{
   font-size:16px;
+  font-weight: lighter;
+}
+.smallest{
+  font-size:10px;
   font-weight: lighter;
 }
 
@@ -97,4 +107,41 @@ body {
   color:white;
   margin-top:10px;
   font-weight: bold;
+}
+
+.details {
+  width: auto;
+  display: block;
+}
+
+.smallIcon {
+  max-width: 50px;
+  max-height:50px;
+  margin-bottom: -10px;
+}
+
+.item{
+  background: #70f2fa;
+  width: 85px;
+  padding:5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px 0px #6de0db;
+  display: inline-block;
+  height:150px;
+
+  margin:5px;
+}
+
+.item .text {
+  min-height: 40px;
+}
+
+
+
+
+#footer {
+  background: #a5f7fc;
+  margin-top: 30px;
+  padding: 10px;
+  max-width: 450px;
 }

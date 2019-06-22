@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gowing Weather</title>
-    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
     <link rel='stylesheet' type="text/css" href="stylesheets/style.css">
     <script src="js/main.js" charset="utf-8"></script>
   </head>
@@ -12,6 +12,7 @@
     <div id="container">
       <div class="center">
         <h1 class=" temp center text"> 21 </h1><span class="degrees text">°C</span>
+        <img class="icon center" src="https://www.weatherbit.io/static/img/icons/c03d.png"> </img>
         <p class=" center description text"> description </p>
       </div>
       <div class="center">
@@ -31,6 +32,40 @@
         </p>
       </div>
       <div class="center break"></div>
+
+      <div class="center supportingInfo">
+        <p> Info Supplied at <span id="time">3pm </span> </p>
+        <div class="details center">
+          <div class="item">
+            <img class="icon center smallIcon" src="/images/cloud.png"> </img>
+            <p class="smaller text"> Cloud Coverage </p>
+            <p id="cloudCoverage" class="medium text"> 70% </p>
+          </div>
+
+          <div class="item">
+            <img class="icon center smallIcon" src="/images/humidity.png"> </img>
+            <p class="smaller text"> Humdidity </p>
+            <p id="cloudCoverage" class="medium text"> 70% </p>
+          </div>
+
+          <div class="item">
+            <img class="icon center smallIcon" src="/images/umbrella.png"> </img>
+            <p class="smaller text"> Precipertation </p>
+            <p id="precipertation" class="medium text"> 70% </p>
+          </div>
+
+
+          <div class="item">
+            <img class="icon center smallIcon" src="/images/sunny.png"> </img>
+            <p class="smaller text"> UV Index </p>
+            <p id="UV" class="medium text"> 5 </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer" class="center smallest">
+        <div>Some Icons were made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> and are licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      </div>
     </div>
   </body>
 </html>

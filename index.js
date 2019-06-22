@@ -20,7 +20,7 @@ app.get("/api/get", function(req, res) {
   getWeatherAjax(res,city);
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Weather App listening on port ${port}!`));
 
 function getWeatherAjax(response, city) {
   const url =

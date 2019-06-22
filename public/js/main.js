@@ -34,8 +34,14 @@ function getWeatherInitial(){
 //Use the API to fill out the DOM
 function parseWeather(weather){
     document.querySelector('.temp').innerHTML=weather.temp;
+    document.querySelector('.icon').src="https://www.weatherbit.io/static/img/icons/" + weather.weather.icon + ".png";
     document.querySelector('.description').innerHTML=weather.weather.description;
     document.querySelector('#location').innerHTML=weather.city_name + ", " + weather.country_code;
+    let date = new Date(weather.ob_time);
+    document.querySelector('#time').innerHTML= date.toLocaleTimeString();
+    document.querySelector('#cloudCoverage').innerHTML= weather.clouds + "%";
+    document.querySelector('#precipertation').innerHTML= weather.precip + "%";
+    document.querySelector('#UV').innerHTML= Math.round(weather.uv);
 }
 
 function lookupCity(){
