@@ -21,7 +21,7 @@ window.onload = function() {
 function getWeatherInitial(){
   if (window.location.hash)
   {
-    city = window.location.hash.replace("#","");
+    city = window.location.hash.replace("#","").replace("%20"," ");
     document.querySelector('.inputCity').value = city;
   }else{
     city = "colchester,england"
