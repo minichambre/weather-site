@@ -19,7 +19,14 @@ window.onload = function() {
 
 //Grab the weather from the API.
 function getWeatherInitial(){
-  fetch('/api/get?city=colchester,england')
+  if (window.location.hash)
+  {
+    city = window.location.hash.replace("#","");
+    document.querySelector('.inputCity').value = city;
+  }else{
+    city = "colchester,england"
+  }
+  fetch('/api/get?city=' + city)
     .then(function(response) {
       return response.json();
     })
