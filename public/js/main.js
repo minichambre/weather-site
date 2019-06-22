@@ -47,6 +47,7 @@ function parseWeather(weather){
 function lookupCity(){
   let element = document.querySelector('.error').style.visibility = "hidden";
   let city = document.querySelector('.inputCity').value;
+  window.location.hash=city;
   getWeather(city);
 
 }
