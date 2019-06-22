@@ -1,7 +1,8 @@
 var cityOld = "";
-
+var loading = "";
 window.onload = function() {
-
+  loading = document.querySelector('#mask');
+  loading.style.display="block";
   //Empty input box when they click it.
   document.querySelector('.inputCity').addEventListener('click', function() {
     cityOld = this.value;
@@ -28,6 +29,7 @@ function getWeatherInitial(){
   }
   fetch('/api/get?city=' + city)
     .then(function(response) {
+
       return response.json();
     })
     .then(function(json) {
@@ -49,9 +51,12 @@ function parseWeather(weather){
     document.querySelector('#cloudCoverage').innerHTML= weather.clouds + "%";
     document.querySelector('#precipertation').innerHTML= weather.precip + "%";
     document.querySelector('#UV').innerHTML= Math.round(weather.uv);
+    document.querySelector('#airQuality').innerHTML= Math.round(weather.aqi);
+    loading.style.display="none";
 }
 
 function lookupCity(){
+  loading.style.display="block";
   let element = document.querySelector('.error').style.visibility = "hidden";
   let city = document.querySelector('.inputCity').value;
   window.location.hash=city;

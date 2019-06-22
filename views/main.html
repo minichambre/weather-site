@@ -11,6 +11,12 @@
     <script src="js/main.js" charset="utf-8"></script>
   </head>
   <body>
+    <div id="mask">
+      <div id="loadingContainer">
+        <img class="spinner" src="/images/spinner.png"></img>
+        <p class="smaller text center"> loading </p>
+      </div>
+    </div>
     <div id="container">
       <div class="center">
         <h1 class=" temp center text"> 21 </h1><span class="degrees text">°C</span>
@@ -62,11 +68,17 @@
             <p class="smaller text"> UV Index </p>
             <p id="UV" class="medium text"> 5 </p>
           </div>
+
+          <div class="item">
+            <img class="icon center smallIcon" src="/images/o2.png"> </img>
+            <p class="smaller text"> Air Quality </p>
+            <p id="airQuality" class="medium text"> 5 </p>
+          </div>
         </div>
       </div>
       <p class=center > Info Supplied at <span id="time">3pm </span> </p>
       <div id="footer" class="center smallest">
-        <div>Some Icons were made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> and are licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        <div>Some Icons were made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> and  <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"                 title="Flaticon">www.flaticon.com</a> and are licensed by <a href="http://creativecommons.org/licenses/by/3.0/"                 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
       </div>
     </div>
   </body>

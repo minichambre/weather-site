@@ -10,14 +10,16 @@ const https = require("https");
 app.use(express.static("public"));
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname+"/views/main.html"));
-
-  //getWeather(res, "rovaniemi,fi");
 });
 
 app.get("/api/get", function(req, res) {
 
   let city = req.query.city;
-  getWeatherAjax(res,city);
+  if (process.env.environment === "dev"){
+    res.sendFile(path.join(__dirname+"/public/js/weather.json")); //dev
+  } else{
+    getWeatherAjax(res,city);
+  }
 });
 
 app.listen(port, () => console.log(`Weather App listening on port ${port}!`));
@@ -34,6 +36,7 @@ function getWeatherAjax(response, city) {
     });
     res.on("end", () => {
       if (body){
+        console.log(body);
         var weather = {"status": 1, "data": JSON.parse(body)["data"][0]};
       } else {
         var weather = {"status": 2}
