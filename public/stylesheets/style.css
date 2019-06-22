@@ -6,6 +6,7 @@ html {
 body {
   background: rgb(208,255,255);
   background: linear-gradient(145deg, rgba(208,255,255,1) 0%, rgba(123,240,249,1) 48%, rgba(54,255,253,1) 100%);
+  background-attachment: fixed;
   font-family: 'Jura', sans-serif;
 }
 #container{
@@ -121,6 +122,8 @@ body {
 .details {
   width: auto;
   display: block;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .smallIcon {
