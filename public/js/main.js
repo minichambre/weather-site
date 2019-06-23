@@ -2,7 +2,6 @@ var cityOld = "";
 var loading = "";
 window.onload = function() {
   loading = document.querySelector('#mask');
-  loading.style.display="block";
   //Empty input box when they click it.
   document.querySelector('.inputCity').addEventListener('click', function() {
     cityOld = this.value;
@@ -36,6 +35,7 @@ function getWeatherInitial(){
       if (json.status === 1){
         parseWeather(json.data);
       } else {
+        let element = document.querySelector('.error').style.visibility = "hidden";
       }
     });
 }
@@ -52,7 +52,7 @@ function parseWeather(weather){
     document.querySelector('#precipertation').innerHTML= weather.precip + "%";
     document.querySelector('#UV').innerHTML= Math.round(weather.uv);
     document.querySelector('#airQuality').innerHTML= Math.round(weather.aqi);
-    loading.style.display="none";
+    loading.style.visibility ="hidden";
 }
 
 function lookupCity(){
@@ -72,10 +72,9 @@ function getWeather(city){
     })
     .then(function(json) {
       if (json.status === 1){
-        console.log("okay!");
         parseWeather(json.data);
       } else {
-        console.log("oh no...");
+        let element = document.querySelector('.error').style.visibility = "hidden";
         showError("Couldn't find that, try 'city, country' as a format")
       }
     });
