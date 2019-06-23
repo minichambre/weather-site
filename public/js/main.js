@@ -19,6 +19,7 @@ window.onload = function() {
 
 //Grab the weather from the API.
 function getWeatherInitial(){
+  //If theres a hash, use that, otherwise load default
   if (window.location.hash)
   {
     city = window.location.hash.replace("#","").replace("%20"," ");
@@ -55,10 +56,13 @@ function parseWeather(weather){
     loading.style.visibility ="hidden";
 }
 
+//Called when they press the search button
 function lookupCity(){
   loading.style.display="block";
   let element = document.querySelector('.error').style.visibility = "hidden";
   let city = document.querySelector('.inputCity').value;
+
+  //Store their search in the address bar, to allow sharing of links & bookmarks
   window.location.hash=city;
   getWeather(city);
 
@@ -79,6 +83,7 @@ function getWeather(city){
       }
     });
 }
+
 
 function showError(error){
   let element = document.querySelector('.error');

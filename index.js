@@ -7,11 +7,14 @@ const apiKey = process.env.APIKEY;
 const path = require("path");
 const https = require("https");
 
+
+//Setup the server and public asset directory
 app.use(express.static("public"));
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname+"/views/main.html"));
 });
 
+//API lookup passthrough
 app.get("/api/get", function(req, res) {
 
   let city = req.query.city;
@@ -24,6 +27,7 @@ app.get("/api/get", function(req, res) {
 
 app.listen(port, () => console.log(`Weather App listening on port ${port}!`));
 
+//Lookup weather
 function getWeatherAjax(response, city) {
   const url =
     "https://api.weatherbit.io/v2.0/current?city="+ city + "&key=" + apiKey;
@@ -36,7 +40,6 @@ function getWeatherAjax(response, city) {
     });
     res.on("end", () => {
       if (body){
-        console.log(body);
         var weather = {"status": 1, "data": JSON.parse(body)["data"][0]};
       } else {
         var weather = {"status": 2}
