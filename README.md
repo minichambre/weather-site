@@ -13,4 +13,4 @@ Weather site that displays the temperature and general weather overview of a loc
 - Node_modules already included, no real need to npm install.
 - Create a .env file in the root and add "APIKEY=" and "environment=" on seperate lines.
 - Paste your API key after the APIKEY=, and set environment to either "dev" or "production". Dev mode uses preloaded JSON API responses to prevent too many queries to weatherbit.
-- Run npm start to start the server and go to localhost:8080
+- Run npm start to start the server and go to localhost:8080 to see the site
